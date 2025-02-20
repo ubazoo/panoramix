@@ -12,7 +12,7 @@ python = ">=3.9,<4"
 
 coloredlogs = "^15"
 requests = "^2"
-web3 = {version = "6.0.0-beta.8", allow-prereleases = true}
+web3 = ">=6.0.0-beta.8"
 timeout_decorator = "^0.5"
 appdirs = "^1.4"
 
