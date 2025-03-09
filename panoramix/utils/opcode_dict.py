@@ -92,7 +92,7 @@ opcode_dict = {
     #
     # Push Operations
     #
-    0x5f: "push0",
+    0x5F: "push0",
     0x60: "push1",
     0x61: "push2",
     0x62: "push3",
@@ -275,6 +275,7 @@ stack_diffs = {
     "push": 1,
     "dup": 1,
     "swap": 0,
+    "push0": 1,
     "push1": 1,
     "push2": 1,
     "push3": 1,

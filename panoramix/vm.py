@@ -590,6 +590,9 @@ class VM(EasyCopy):
 
         elif op[:4] == "push":
             stack.append(param)
+            
+        elif op == "push0":
+            stack.push(0)
 
         elif op == "pop":
             stack.pop()
