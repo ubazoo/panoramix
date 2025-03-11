@@ -154,7 +154,7 @@ def _decompile_with_loader(loader, only_func_name=None) -> Decompilation:
             if target > 1 and loader.lines[target][1] == "jumpdest":
                 target += 1
 
-            @timeout_decorator.timeout(60 * 3, timeout_exception=TimeoutInterrupt)
+            @timeout_decorator.timeout(60 * 1, timeout_exception=TimeoutInterrupt)
             def dec():
                 logger.info(" -> Interpreting EVM on function...")
                 trace = VM(loader).run(target, stack=stack, timeout=60)
@@ -167,7 +167,7 @@ def _decompile_with_loader(loader, only_func_name=None) -> Decompilation:
                     explain("Without assembly", trace)
 
                 logger.info(" -> Cleaning up AST, identifying loops...")
-                trace = make_whiles(trace, timeout=60)
+                trace = make_whiles(trace, timeout=30)
                 explain("final", trace)
 
                 if "--explain" in sys.argv:
